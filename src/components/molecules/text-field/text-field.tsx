@@ -19,18 +19,19 @@ export const JackTextField = (props: IJackTextFieldProps) => {
     handleChange,
     value,
     name,
-    label
+    label,
   } = props;
 
   return (
     <div className="textfield-container">
-      <JackInput className="textfield-input"
+      <JackInput
+        className="textfield-input"
         name={name}
         onChange={handleChange}
         onBlur={handleBlur}
         value={value}
-      ></JackInput>
-      <JackLabel className="textfield-label">{ label }</JackLabel>
+      />
+      <JackLabel className="textfield-label">{label}</JackLabel>
     </div>
   );
 };

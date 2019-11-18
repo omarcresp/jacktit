@@ -6,6 +6,6 @@ interface IJackLabelProps {
 }
 
 export const JackLabel = styled.p<IJackLabelProps>`
-  color: var(--${props => props.color || 'initial'});
-  font-size: ${props => props.size || 1}rem;
+  color: var(--${(props) => props.color || 'initial'});
+  font-size: ${(props) => props.size || 1}rem;
 `;

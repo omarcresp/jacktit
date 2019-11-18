@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-interface IJackInputProps {}
-
-export const JackInput = styled.input<IJackInputProps>`
+export const JackInput = styled.input<{}>`
   border-radius: 3px;
   border: 1px solid var(--white);
   color: var(--black);
