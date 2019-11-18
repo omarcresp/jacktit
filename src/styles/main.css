@@ -1,0 +1,43 @@
+:root {
+  font-size: 14px;
+
+  --primary-light: #4858A1;
+  --primary: #2F4092;
+  --primary-dark: #1C2D78;
+
+  --secondary-light: #6446A1;
+  --secondary: #4E2D92;
+  --secondary-dark: #391A78;
+
+  --acent-light: #EBC057;
+  --acent: #D6A530;
+  --acent-dark: #B08317;
+
+  --grey-light: #B5B5B5;
+  --grey: #8A8A8A;
+  --grey-dark: #5A5A5A;
+
+  --white: #E7E6E6;
+  --black: #1C1B1B;
+
+  --text-primary-light: var(--black);
+  --text-primary: var(--white);
+  --text-primary-dark: var(--white);
+
+  --text-secondary-light: var(--white);
+  --text-secondary: var(--white);
+  --text-secondary-dark: var(--white);
+
+  --text-acent-light: var(--black);
+  --text-acent: var(--black);
+  --text-acent-dark: var(--black);
+
+  color: var(--white);
+  background: var(--black);
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
