@@ -1,0 +1,13 @@
+.textfield-label {
+  margin-bottom: 5px;
+  grid-row: label;
+}
+
+.textfield-input:focus + p {
+  color: var(--acent-light);
+}
+
+.textfield-container {
+  display: grid;
+  grid-template-rows: [label] auto [input] auto;
+}
