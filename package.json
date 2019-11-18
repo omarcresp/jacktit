@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^4.4.0",
     "formik": "^2.0.4",
     "styled-components": "^4.4.1"
   }
