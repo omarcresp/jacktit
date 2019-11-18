@@ -10,6 +10,7 @@ const initialState: IUserState = {
 export const userReducer = (state: IUserState = initialState, action: any) => {
   switch (action.type) {
     case UserActions.SET_USER:
+    case UserActions.SET_USER_ASYNC:
       return {
         user: action.user,
       };

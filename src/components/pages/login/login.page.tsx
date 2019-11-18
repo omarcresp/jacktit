@@ -1,16 +1,17 @@
 import React from 'react';
-import { connect, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 
-import { getUser } from '../../../store/user/selectors';
+import { setUser } from '../../../store/user/actions';
 import { JackLoginForm } from '../../organisms/form-login/login-form';
 
 export const LoginPage = connect()((props: any) => {
-  console.log(props);
-  console.log(useSelector(getUser));
+  const submitForm = (value: any) => {
+    props.dispatch(setUser(value));
+  };
 
   return (
     <div>
-      <JackLoginForm />
+      <JackLoginForm onSubmitForm={submitForm} />
     </div>
   );
 });

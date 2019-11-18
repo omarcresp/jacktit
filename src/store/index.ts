@@ -1,10 +1,15 @@
-import { combineReducers, createStore } from 'redux';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+
+import { watchUser } from '../sagas/saga';
 import { userReducer } from './user/reducers';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const reducers = combineReducers({
   user: userReducer,
 });
 
-const reduxDevTools = (window as any).__REDUX_DEVTOOLS_EXTENSION__;
+export const store = createStore(reducers, applyMiddleware(sagaMiddleware));
 
-export const store = createStore(reducers, reduxDevTools && reduxDevTools());
+sagaMiddleware.run(watchUser);

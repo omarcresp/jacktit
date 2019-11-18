@@ -8,6 +8,7 @@
       "avoid-template",
       "jsx-double"
     ],
-    "no-console": false
+    "no-console": false,
+    "no-submodule-imports": false
   }
 }

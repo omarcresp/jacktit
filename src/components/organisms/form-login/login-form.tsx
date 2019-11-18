@@ -12,14 +12,18 @@ interface IFormValues {
   [key: string]: string;
 }
 
-export const JackLoginForm = (props: any) => {
+interface IJackLoginFormProps {
+  onSubmitForm: (values: IFormValues) => void;
+}
+
+export const JackLoginForm = (props: IJackLoginFormProps) => {
   const formValues: IFormValues = {
     email: '',
     pass: '',
   };
 
   const handleSubmit = (values: IFormValues) => {
-    console.log(values);
+    props.onSubmitForm(values);
   };
 
   const formData = [
