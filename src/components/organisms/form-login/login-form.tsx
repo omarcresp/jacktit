@@ -4,6 +4,7 @@ import React from 'react';
 import { JackButton } from '../../atoms/buttons';
 import { JackTextField } from '../../molecules/text-field/text-field';
 
+import { GoogleButton } from '../../atoms/googleButton';
 import './login-form.css';
 
 interface IFormValues {
@@ -17,13 +18,11 @@ interface IJackLoginFormProps {
 }
 
 export const JackLoginForm = (props: IJackLoginFormProps) => {
+  const { onSubmitForm } = props;
+
   const formValues: IFormValues = {
     email: '',
     pass: '',
-  };
-
-  const handleSubmit = (values: IFormValues) => {
-    props.onSubmitForm(values);
   };
 
   const formData = [
@@ -31,11 +30,7 @@ export const JackLoginForm = (props: IJackLoginFormProps) => {
     { value: 'pass', text: 'Contraseña' },
   ];
 
-  const generateInput = (
-    values: IFormValues,
-    handleChange: FormikHandlers['handleChange'],
-    handleBlur: FormikHandlers['handleBlur'],
-  ) => formData.map((d) => (
+  const generateInput = ({ values, handleBlur, handleChange }: FormikProps<IFormValues>) => formData.map((d) => (
     <JackTextField
       key={d.value}
       label={d.text}
@@ -47,26 +42,23 @@ export const JackLoginForm = (props: IJackLoginFormProps) => {
   ));
 
   const GenerateForm = (formikProps: FormikProps<IFormValues>) => {
-    const {
-      submitForm,
-      handleChange,
-      handleBlur,
-      values,
-    } = formikProps;
+    const { submitForm } = formikProps;
 
     return (
       <div>
-        {generateInput(values, handleChange, handleBlur)}
+        {generateInput(formikProps)}
 
         <JackButton type="submit" className="login_form-button" onClick={submitForm}>
           Submit
         </JackButton>
+
+        <GoogleButton/>
       </div>
     );
   };
 
   return (
-    <Formik initialValues={formValues} onSubmit={handleSubmit}>
+    <Formik initialValues={formValues} onSubmit={onSubmitForm}>
       {(formikProps: FormikProps<IFormValues>) => GenerateForm(formikProps)}
     </Formik>
   );
