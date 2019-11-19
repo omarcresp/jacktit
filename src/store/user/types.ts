@@ -1,4 +1,5 @@
 export enum UserActions {
   SET_USER = 'SET_USER',
-  SET_USER_ASYNC = 'SET_USER_ASYNC',
+  LOGIN_REQUEST = 'LOGIN_REQUEST',
+  GET_USER = 'GET_USER',
 }
