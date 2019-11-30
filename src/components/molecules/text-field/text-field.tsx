@@ -11,6 +11,7 @@ interface IJackTextFieldProps {
   handleBlur?: any;
   value: string;
   name: string;
+  inputType?: string;
 }
 
 export const JackTextField = (props: IJackTextFieldProps) => {
@@ -20,6 +21,7 @@ export const JackTextField = (props: IJackTextFieldProps) => {
     value,
     name,
     label,
+    inputType,
   } = props;
 
   return (
@@ -30,6 +32,7 @@ export const JackTextField = (props: IJackTextFieldProps) => {
         onChange={handleChange}
         onBlur={handleBlur}
         value={value}
+        type={inputType || 'text'}
       />
       <JackLabel className="textfield-label">{label}</JackLabel>
     </div>

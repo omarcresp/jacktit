@@ -1,21 +1,15 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
-import { loginUser } from '../../../store/user/actions';
-import { selectUsername } from '../../../store/user/selectors';
+import { IFormValues } from '../../../core/interfaces/login/login-form.interface';
 import { JackLoginForm } from '../../organisms/form-login/login-form';
 
 export const LoginPage = () => {
-  const dispatch = useDispatch();
-  const userName = useSelector(selectUsername);
-
-  const submitForm = (value: any) => {
-    dispatch(loginUser());
+  const submitForm = (value: IFormValues) => {
+    console.log(value);
   };
 
   return (
     <div>
-      {userName}
       <JackLoginForm onSubmitForm={submitForm} />
     </div>
   );

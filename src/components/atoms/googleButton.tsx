@@ -2,10 +2,14 @@ import React from 'react';
 
 import './styles/googleButton.css';
 
-export const GoogleButton = () => {
+interface IGoogleButtonProps {
+  click: () => void;
+}
+
+export const GoogleButton = (props: IGoogleButtonProps) => {
   return (
     <div>
-      <button className="google-button">
+      <button className="google-button" onClick={props.click}>
         <div className="google-logo-container">
           <svg
             version="1.1"
